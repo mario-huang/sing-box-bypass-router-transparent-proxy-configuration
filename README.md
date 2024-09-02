@@ -246,9 +246,7 @@ DNSStubListenerExtra=::
 让它生效
 
 ```
-
 sudo systemctl restart systemd-resolved
-
 ```
 
 好了，恭喜你 🎉🎉🎉，现在你局域网的设备都可以科学上网了。
