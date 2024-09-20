@@ -230,6 +230,20 @@ DNS：192.168.31.6
 
 相信很多人这些都做完了，但是局域网设备完全不能上网，下面是重点。
 
+- 开启ipv4转发。
+
+使用以下命令检查 IPv4 转发是否已启用
+```bash
+sysctl net.ipv4.ip_forward
+```
+如果输出为 net.ipv4.ip_forward = 1，则表示 IPv4 转发已启用。
+
+否则开启它：
+在/etc/sysctl.conf文件里添加一行`net.ipv4.ip_forward = 1`，保存之后运行：
+```bash
+sudo sysctl -p
+```
+
 - 在旁路由上修改转发规则。
 
 修改/etc/nftables.conf，添加以下规则
