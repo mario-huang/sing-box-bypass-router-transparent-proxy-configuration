@@ -22,7 +22,7 @@
         "detour": "select"
       },
       {
-        "tag": "local",
+        "tag": "direct",
         "address": "https://1.12.12.12/dns-query",
         "detour": "direct"
       },
@@ -34,7 +34,7 @@
     "rules": [
       {
         "outbound": "any",
-        "server": "local"
+        "server": "direct"
       },
       {
         "clash_mode": "Global",
@@ -42,21 +42,28 @@
       },
       {
         "clash_mode": "Direct",
-        "server": "local"
+        "server": "direct"
       },
       {
         "rule_set": "geosite-category-ads-all",
         "server": "block"
       },
       {
-        "rule_set": ["geosite-apple"],
-        "server": "local"
+        "rule_set": [
+          "geosite-apple"
+        ],
+        "server": "direct"
       },
       {
-        "rule_set": ["geosite-geolocation-!cn", "geosite-anthropic"],
+        "rule_set": [
+          "geosite-geolocation-!cn",
+          "geosite-anthropic"
+        ],
+        "domain_keyword": [],
         "server": "remote"
       }
     ],
+    "final": "direct",
     "independent_cache": true
   },
   "inbounds": [
